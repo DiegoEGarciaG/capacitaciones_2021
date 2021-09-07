@@ -16,7 +16,7 @@ import cv2
 # Se leen los argumentos de entrada
 parser = argparse.ArgumentParser()
 parser.add_argument('--env-name', default="Duckietown-udem1-v1")
-parser.add_argument('--map-name', default='udem1')
+parser.add_argument('--map-name', default='DiegoGarcia1')
 parser.add_argument('--distortion', default=False, action='store_true')
 parser.add_argument('--draw-curve', action='store_true', help='draw the lane following curve')
 parser.add_argument('--draw-bbox', action='store_true', help='draw collision detection bounding boxes')
@@ -61,9 +61,15 @@ while True:
 
     # Esto es avanzar recto hacia adelante al apretar la tecla w
     if key == ord('w'):
-        action = np.array([0.44, 0.0])
-
+        action = np.array([0.66, 0.0])
+    if key == ord('a'):
+        action = np.array([0.44, 1.0])
+    if key == ord('s'):
+        action = np.array([-0.66, 0.0])
+    if key == ord('d'):
+        action = np.array([0.44, -1.0])
     ### AGREGAR MÁS COMPORTAMIENTOS ###
+
 
 
 
